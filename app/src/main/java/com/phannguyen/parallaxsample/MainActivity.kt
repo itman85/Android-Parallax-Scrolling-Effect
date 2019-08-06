@@ -5,11 +5,17 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.appbar.AppBarLayout
+import com.phannguyen.parallaxsample.gallery.GalleryAdapter
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    var galleryAdapter:GalleryAdapter? =null
+
+    private val imageUrls = listOf(R.drawable.airplane,R.drawable.arctichare,R.drawable.baboon,R.drawable.boat,R.drawable.frymire)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +33,13 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
+        initGallery()
+    }
+
+    private fun initGallery(){
+        gallery.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        galleryAdapter = GalleryAdapter(this,imageUrls)
+        gallery.adapter = galleryAdapter
 
     }
 
