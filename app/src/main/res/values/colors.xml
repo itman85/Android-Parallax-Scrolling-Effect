@@ -3,4 +3,27 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="scout_orange">#FFFF7500</color><!-- buttons, icons -->
+    <color name="scout_orange_translucent">#4CFF7500</color><!-- buttons, icons -->
+    <color name="scout_blue">#FF003468</color><!-- logo -->
+    <color name="white">#FFFFFFFF</color><!-- icons, card bg -->
+    <color name="blue">#FF00478C</color><!-- app bar, tabs -->
+    <color name="light_blue">#FF1175D9</color><!-- links, btn label -->
+    <color name="cyan">#FF259FE3</color><!-- info messages -->
+    <color name="red">#FFC80000</color><!-- validation, error -->
+    <color name="light_yellow">#FFFEF7EC</color><!-- highlight bg -->
+    <color name="white_opacity">#B8FFFFFF</color><!-- inactive tab -->
+    <color name="white_opacity_low">#E6FFFFFF</color>
+    <color name="anthracite">#DE000000</color><!-- titles, body text -->
+    <color name="lighter_anthracite">#FF323232</color><!-- snackbar, toast -->
+    <color name="dark_grey">#8A000000</color><!-- icons, body text -->
+    <color name="grey">#61000000</color><!-- titles, labels -->
+    <color name="light_grey">#FFDDDDDD</color><!-- divider line -->
+    <color name="silver">#FFF4F4F4</color><!-- no image bg -->
+    <color name="green">#FF27AE60</color><!-- active, checked -->
+    <color name="yellow">#FFF39C12</color><!-- top label, draft -->
+    <color name="bright_red">#FFEA4B35</color><!-- inactive -->
+    <color name="turquoise">#FF2BB2BB</color><!-- checking -->
+    <color name="dark_red">#FF9D3224</color><!-- expired -->
 </resources>

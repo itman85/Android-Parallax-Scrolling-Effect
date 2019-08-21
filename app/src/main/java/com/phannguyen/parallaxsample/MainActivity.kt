@@ -1,46 +1,41 @@
 package com.phannguyen.parallaxsample
 
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.appbar.AppBarLayout
-import com.phannguyen.parallaxsample.gallery.GalleryAdapter
-
-import kotlinx.android.synthetic.main.activity_main.*
+import android.view.View
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.layout_autotoolbar.*
 
 class MainActivity : AppCompatActivity() {
 
-    var galleryAdapter:GalleryAdapter? =null
-
-    private val imageUrls = listOf(R.drawable.airplane,R.drawable.arctichare,R.drawable.baboon,R.drawable.boat,R.drawable.frymire)
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            setupContentWindow()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.setDisplayShowTitleEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        supportActionBar?.setDisplayShowHomeEnabled(false)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        toolbar.title = "Apps"
+        //toolbar.title = "Apps"
+        toolbar.visibility = View.VISIBLE
+        toolbarTitle.text = "1/100"
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        supportFragmentManager.beginTransaction().add(R.id.container,FragmentContent.createInstance(),null).commit()
 
-        initGallery()
+
     }
 
-    private fun initGallery(){
-        gallery.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        galleryAdapter = GalleryAdapter(this,imageUrls)
-        gallery.adapter = galleryAdapter
-
+    fun setupContentWindow() {
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = Color.TRANSPARENT
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
